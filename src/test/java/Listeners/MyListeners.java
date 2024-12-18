@@ -12,7 +12,6 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -64,9 +63,7 @@ public class MyListeners implements ITestListener {
 
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchFieldException e) {
+        } catch (IllegalAccessException | NoSuchFieldException e) {
             throw new RuntimeException(e);
         }
 

@@ -71,7 +71,7 @@ public class RegisterTest extends TestBase {
         Assert.assertTrue(registerPage.displayPhoneWarning());
         Assert.assertTrue(registerPage.displayPasswordWarning());
 
-//        throw new SkipException("Skipping this test due to a condition.");
+        throw new SkipException("Skipping this test due to a condition.");
 
     }
 

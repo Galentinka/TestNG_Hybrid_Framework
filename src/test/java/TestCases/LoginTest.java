@@ -60,7 +60,7 @@ public class LoginTest extends TestBase {
     @Test(priority = 4)
     public void loginWithInvalidCredentials() {
 
-//        int i = 20 / 0;
+        int i = 20 / 0;
 
         loginPage = new LoginPage(driver);
 
@@ -77,7 +77,7 @@ public class LoginTest extends TestBase {
         loginPage.clickOnLoginButton();
         Assert.assertTrue(loginPage.loginWaningMessage().contains(dataProperties.getProperty("invalidLoginWarning")));
 
-//        throw new SkipException("Skipping this test due to a condition.");
+        throw new SkipException("Skipping this test due to a condition.");
 
     }
 
