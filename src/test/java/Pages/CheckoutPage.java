@@ -15,13 +15,13 @@ public class CheckoutPage {
     @FindBy(id = "button-shipping-address")
     private WebElement deliveryDetailsContinueButton;
 
-    @FindBy(name = "comment")
+    @FindBy(xpath = "//div[@id='collapse-shipping-method']//textarea")
     private WebElement commentDeliveryMethod;
 
     @FindBy(id = "button-shipping-method")
     private WebElement deliveryMethodContinueButton;
 
-    @FindBy(name = "comment")
+    @FindBy(xpath = "//div[@id='collapse-payment-method']//textarea")
     private WebElement commentPaymentMethod;
 
     @FindBy(id = "button-payment-method")
@@ -55,6 +55,7 @@ public class CheckoutPage {
     }
 
     public void sendCommentPaymentMethod(String Comment) {
+        commentPaymentMethod.clear();
         commentPaymentMethod.sendKeys(Comment);
     }
 
@@ -76,6 +77,7 @@ public class CheckoutPage {
         deliveryDetailsContinueButton.click();
         commentDeliveryMethod("Great!");
         deliveryMethodContinueButton.click();
+        Thread.sleep(1000);
         sendCommentPaymentMethod("No comment.");
         termsAndConditionRatioButton.click();
         paymentMethodContinueButton.click();
